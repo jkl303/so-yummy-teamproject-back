@@ -13,7 +13,6 @@ const addFavorite = async (req, res) => {
     throw HttpError(404, "Already added to favorites");
   }
 
-  // здесь можно вместо второго запроса использовать updateOne и делать проверку на result.modifiedCount>0
   const result = await Recipe.findByIdAndUpdate(
     { _id: id },
     {

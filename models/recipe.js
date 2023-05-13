@@ -20,9 +20,6 @@ const categoryList = [
   "Vegetarian",
 ];
 
-// регулярные выражения добавите по необходимости
-// const regExp...
-
 const recipeSchema = new Schema(
   {
     title: {
@@ -51,12 +48,12 @@ const recipeSchema = new Schema(
     thumb: {
       type: String,
       default:
-        "https://res.cloudinary.com/dwqwy0spx/image/upload/v1680522282/SoYummyStubs/thumbStub_y5no2y.svg",
+        "https://res.cloudinary.com/dik8ehacz/image/upload/v1683908759/meal_x0uynz.jpg",
     },
     preview: {
       type: String,
       default:
-        "https://res.cloudinary.com/dwqwy0spx/image/upload/v1680522281/SoYummyStubs/previewStub_hzlkpw.svg",
+        "https://res.cloudinary.com/dik8ehacz/image/upload/v1683908759/meal_x0uynz.jpg",
     },
     time: {
       type: String,
@@ -117,12 +114,7 @@ const addRecipeSchema = Joi.object({
   ingredients: Joi.array().required(),
 });
 
-// const validationSchema2 = Joi.object({});
-
-// const validationSchema3 = Joi.object({});
-
 const schemasJoi = { addRecipeSchema };
-// ...схемы валидации
 
 const Recipe = model("recipe", recipeSchema);
 

@@ -10,7 +10,7 @@ const getRecipesByIngredients = async (req, res) => {
   if (result.length === 0) {
     throw HttpError(404, "ingredient not found");
   }
-  // const ingredientId = result[0]._id;
+
   const ingredientsId = result.map((item) => item._id);
 
   const value = await Recipe.find({ "ingredients.id": { $in: ingredientsId } });

@@ -4,9 +4,7 @@ const { ObjectId } = mongoose.Types;
 
 const addOwnRecipes = async (req, res) => {
   const { _id: owner } = req.user;
-  const {
-    path = "https://asset.cloudinary.com/dik8ehacz/04185f05f6e2f0607f21c67b9b1eab64",
-  } = req.file;
+  const path = req.file && req.file.path;
   const { ingredients = [], ...recipe } = req.body;
 
   const newIngredients = ingredients.map((ingredient) => ({
@@ -26,7 +24,7 @@ const addOwnRecipes = async (req, res) => {
   if (recipesList.length === 10) {
     return res
       .status(201)
-      .json({ result, message: "Yuhu, you already have 10 recipes" }); // При додаванні 10-го рецепту!!!!!
+      .json({ result, message: "Yuhu, you already have 10 recipes" });
   }
   res.status(201).json(result);
 };
