@@ -1,4 +1,4 @@
-A beck-end part for our learning team project. Frond-end part of app is [here](https://github.com/Burla4enko/so-yummy-team-project-front.git)
+A beck-end part for our learning team project. Frond-end part of the app is located [here](https://github.com/Burla4enko/so-yummy-team-project-front.git)
 
 ### Commands:
 - `npm start` &mdash; server start in production mode
